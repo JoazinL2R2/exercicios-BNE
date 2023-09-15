@@ -1,0 +1,144 @@
+—----------------------------------------------------Exercicio 1—--------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+  float ValorPresente;
+  float TaxaJuros;
+  int PeriodoMes;
+  float ValorFinal;
+  float valor;
+  
+  ValorPresente = 1.000;
+  TaxaJuros = 5.30 / 100;
+  PeriodoMes = 10;
+  
+  valor = ValorPresente * (1 + TaxaJuros);
+  ValorFinal = pow(valor, PeriodoMes); 
+
+  printf(" R$ %0.5f", ValorFinal);
+}
+—-----------------------------------------------------exercicio 2—-------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+  float Valor;
+  float juros;
+  int periodo;
+  float v1;
+  float rendimento;
+  int i;
+  Valor = 3800;
+  juros = 0.0125;
+  periodo = 7;
+  i = 1;
+  while(i < periodo)
+    {
+      v1 = powf(1+juros,i);
+      rendimento = Valor * v1;
+      printf("\n%0.2f",rendimento);
+      i++;
+    }
+}
+
+—-------------------------------------------------exercicio 3—-----------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+  float Valor;
+  float juros;
+  int periodo;
+  float v1;
+  float rendimento;
+  int i;
+  printf("insira o Valor inicial do investimento em Reais(R$):\n");
+  scanf("\n%f",&Valor);
+  printf("informe o Juros mensal('%'):\n");
+  scanf("\n%f",&juros);
+  juros = juros /100;
+  printf("Informe o periodo de investimento em meses:\n");
+  scanf("%d",&periodo);
+  i = 1;
+  while(i <= periodo)
+    {
+      v1 = powf(1+juros,i);
+      rendimento = Valor * v1;
+      printf("\n%0.2f",rendimento);
+      i++;
+    }
+}
+
+—-----------------------------------------------------exercicio 4—-------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+
+int main(void) 
+{
+  float Valor;
+  float juros;
+  int periodo;
+  float v1;
+  float rendimento;
+  int i;
+  float saque;
+  char resposta;
+  float Vdesejado;
+
+  printf("Insira o Valor inicial do investimento em Reais(R$):\n");
+  scanf("%f", &Valor);
+
+  printf("Informe o Juros mensal('%%'):\n");
+  scanf("%f", &juros);
+  juros = juros / 100;
+
+  printf("Informe o periodo de investimento em meses:\n");
+
+  scanf("%d", &periodo);
+
+  i = 1;
+  while (i <= periodo) 
+  {
+    v1 = powf(1 + juros,i);
+    rendimento = Valor * v1;
+    printf("\n%0.2f",rendimento);
+
+    printf("\nDeseja Efetuar um saque? (s/n)\n");
+    scanf("%c",&resposta);
+
+    while (resposta == 's') {
+      printf("Insira o Valor Desejado:\n");
+      scanf("%f", &Vdesejado);
+      rendimento = rendimento - Vdesejado;
+
+      printf("Deseja Efetuar outro saque? (s/n)\n");
+      scanf("%c",&resposta);  
+    }
+    i++;
+  }
+}
+—---------------------------------------------------Exercicio 5—---------------------------------------------------
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+  float VF;
+  float VP;
+  float juros;
+  int periodo;
+  float v1;
+  float rendimento;
+  int i;
+  VF = 7390.61;
+  juros = 0.0125;
+  periodo = 7;
+  i = 1;
+  while(i < periodo)
+    {
+      v1 = powf(1+juros,i);
+      VP = VF / v1;
+      printf("\n%0.2f",VP);
+      i++;
+    }
+}
